@@ -1,9 +1,9 @@
 import React from 'react';
-import Navbar from './components/Navigation/Navbar/Navbar';
+import Layout from './Layout/Layout';
 
 function App() {
   return (
-    <Navbar />
+    <Layout />
   );
 }
 

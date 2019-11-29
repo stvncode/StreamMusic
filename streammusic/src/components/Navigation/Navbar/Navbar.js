@@ -13,6 +13,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { FiMenu } from 'react-icons/fi';
 import { FaChevronRight } from 'react-icons/fa';
 import  SideDrawer from '../SideDrawer/SideDrawer';
+import Search from './Search/Search';
 
 const drawerWidth = 240;
 
@@ -41,6 +42,13 @@ const useStyles = makeStyles(theme => ({
   hide: {
     display: 'none',
   },
+  leftSearch: {
+    marginLeft: '44.5px',
+  },
+  leftChevron: {
+    marginLeft: '15px',
+    marginTop: '6.5px',
+  },
 }));
 
 const Navbar = () => {
@@ -49,10 +57,6 @@ const Navbar = () => {
 
   const handleDrawerOpen = () => {
     setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
   };
 
   return (
@@ -77,10 +81,13 @@ const Navbar = () => {
           <Typography variant="h6" noWrap>
             Music Project 
           </Typography>
-          &nbsp;
-          &nbsp;
+          <div className={classes.leftChevron}>
           <FaChevronRight />
+          </div>
           {/*Insert {salon or playlist}*/}
+          <div className={classes.leftSearch}>
+          <Search />
+          </div>
         </Toolbar>
       </AppBar>
       <SideDrawer open={open} setOpen={setOpen}/>

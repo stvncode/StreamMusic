@@ -1,22 +1,20 @@
 import React from 'react';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
 import { GoChevronLeft } from 'react-icons/go';
-import { MdMail } from 'react-icons/md';
-import { FaInbox } from 'react-icons/fa';
 import { FiMusic } from 'react-icons/fi';
 import Divider from '@material-ui/core/Divider';
-import List from '@material-ui/core/List';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
+import TextFieldOutlined from '../../UI/Forms/TextFields/TextFieldOutlined';
+import Heading from '../../UI/Headings/Headings';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     margLeft: {
-        marginLeft: '45px',
+        marginLeft: '50px',
+        marginTop: '20px',
+        marginBottom: '10px',
     },
     drawer: {
       width: drawerWidth,
@@ -31,6 +29,9 @@ const useStyles = makeStyles(theme => ({
       padding: theme.spacing(0, 1),
       ...theme.mixins.toolbar,
       justifyContent: 'flex-end',
+    },
+    top: {
+      marginTop: '40px',
     },
   }));
 
@@ -59,23 +60,14 @@ const SideDrawer = ({open, setOpen}) => {
         </div>
         <Divider />
         <FiMusic className={classes.margLeft} size={128}/>
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <FaInbox /> : <MdMail />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <FaInbox /> : <MdMail />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <Heading size="h2" color="black">
+          Music Project
+        </Heading>
+        <Heading size="h4" color="black">
+          I'm happy to se you again
+        </Heading>
+        <TextFieldOutlined value="name"/>
+        <TextFieldOutlined value="password"/>
       </Drawer>
     )
 }
