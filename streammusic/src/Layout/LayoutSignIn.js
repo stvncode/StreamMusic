@@ -1,11 +1,12 @@
 import React from 'react';
-import Navbar from '../components/Navigation/Navbar/Navbar';
 import './Layout.css';
 import RecipeReviewCard from '../containers/Playlist/RecipeReviewCard';
-const Layout = () => {
+import NavbarSignIn from '../components/Navigation/Navbar/NavbarSignIn';
+
+const LayoutSignIn = () => {
   return (
     <>
-      <Navbar />
+      <NavbarSignIn />
       <div className="MainWrapper">
         <RecipeReviewCard />
       </div>
@@ -13,4 +14,4 @@ const Layout = () => {
   );
 }
 
-export default Layout;
+export default LayoutSignIn;

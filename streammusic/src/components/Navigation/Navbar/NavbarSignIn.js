@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import clsx from 'clsx';
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,8 +12,8 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import { FiMenu } from 'react-icons/fi';
 import { FaChevronRight } from 'react-icons/fa';
-import  SideDrawer from '../SideDrawer/SideDrawer';
 import Search from './Search/Search';
+import SideDrawerSignIn from '../SideDrawer/SideDrawerSignIn/SideDrawerSignIn';
 
 const drawerWidth = 240;
 
@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    backgroundColor: '#64829E',
+    backgroundColor: 'black',
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -51,13 +51,9 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const Navbar = () => {
+const NavbarSignIn = () => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
+  const [open, setOpen] = useState(true);
 
   return (
     <div className={classes.root}>
@@ -72,7 +68,7 @@ const Navbar = () => {
           <IconButton
             color="inherit"
             aria-label="open drawer"
-            onClick={handleDrawerOpen}
+            onClick={() => setOpen(true)}
             edge="start"
             className={clsx(classes.menuButton, open && classes.hide)}
           >
@@ -90,9 +86,9 @@ const Navbar = () => {
           </div>
         </Toolbar>
       </AppBar>
-      <SideDrawer open={open} setOpen={setOpen}/>
+      <SideDrawerSignIn open={open} setOpen={setOpen}/>
     </div>
   );
 }
 
-export default Navbar;
+export default NavbarSignIn;

@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   top: {
-    marginTop: '30px',
+    marginTop: '20px',
   },
 }));
 

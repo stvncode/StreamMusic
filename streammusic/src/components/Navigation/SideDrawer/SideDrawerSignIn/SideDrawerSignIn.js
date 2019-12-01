@@ -1,12 +1,15 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { GoChevronLeft } from 'react-icons/go';
 import { FiMusic } from 'react-icons/fi';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
-import TextFieldOutlined from '../../UI/Forms/TextFields/TextFieldOutlined';
-import Heading from '../../UI/Headings/Headings';
+import TextFieldOutlined from '../../../UI/Forms/TextFields/TextFieldOutlined';
+import Heading from '../../../UI/Headings/Headings';
+import Buttons from '../../../UI/Forms/Buttons/Buttons';
+import gif from './bart.gif';
 
 const drawerWidth = 240;
 
@@ -19,6 +22,7 @@ const useStyles = makeStyles(theme => ({
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
+      alignItems: 'center',
     },
     drawerPaper: {
       width: drawerWidth,
@@ -30,17 +34,26 @@ const useStyles = makeStyles(theme => ({
       ...theme.mixins.toolbar,
       justifyContent: 'flex-end',
     },
-    top: {
-      marginTop: '40px',
+    button: {
+      marginTop: '20px',
+      marginLeft: '64.5px',
     },
+    bart: {
+      marginTop: '200px',
+      marginLeft: '30px',
+    },
+    account: {
+      marginTop: '5px',
+      marginRight: '10px',
+    }
   }));
 
-const SideDrawer = ({open, setOpen}) => {
+const SideDrawerSignIn = ({open, setOpen}) => {
 
     const classes = useStyles();
 
     const handleDrawerClose = () => {
-        setOpen(false);
+        setOpen(true);
       };
 
     return (
@@ -64,12 +77,25 @@ const SideDrawer = ({open, setOpen}) => {
           Music Project
         </Heading>
         <Heading size="h4" color="black">
-          I'm happy to se you again
+          I'm happy to se you again <span role="img" aria-label="smiley">🙂</span>
         </Heading>
         <TextFieldOutlined value="name"/>
         <TextFieldOutlined value="password"/>
+        <div className={classes.button}>
+          <Buttons>
+            Sign In
+          </Buttons>
+        </div>
+        <div className={classes.account}>
+        <Heading size="h4" color="black">
+          <Link to={'/signup'}>
+            Create account
+          </Link>  
+        </Heading>
+        </div>
+        <img className={classes.bart} src={gif} width="200px" alt="gif"/>
       </Drawer>
     )
 }
 
-export default SideDrawer;
+export default SideDrawerSignIn;
