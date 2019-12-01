@@ -1,19 +1,20 @@
 import React, {useState} from 'react';
-import clsx from 'clsx';
 
+import Search from './Search/Search';
+import SideDrawerSignUp from '../SideDrawer/SideDrawerSignUp/SideDrawerSignUp';
+
+import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-
 import Typography from '@material-ui/core/Typography';
-
 import IconButton from '@material-ui/core/IconButton';
+
 import { FiMenu } from 'react-icons/fi';
 import { FaChevronRight } from 'react-icons/fa';
-import Search from './Search/Search';
-import SideDrawerSignUp from '../SideDrawer/SideDrawerSignUp/SideDrawerSignUp';
+
 
 const drawerWidth = 240;
 
@@ -78,11 +79,11 @@ const NavbarSignUp = () => {
             Music Project 
           </Typography>
           <div className={classes.leftChevron}>
-          <FaChevronRight />
+            <FaChevronRight />
           </div>
           {/*Insert {salon or playlist}*/}
           <div className={classes.leftSearch}>
-          <Search />
+            <Search />
           </div>
         </Toolbar>
       </AppBar>

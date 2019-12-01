@@ -1,15 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { GoChevronLeft } from 'react-icons/go';
-import { FiMusic } from 'react-icons/fi';
+
+import TextFieldOutlined from '../../../UI/Forms/TextFields/TextFieldOutlined';
+import Heading from '../../../UI/Headings/Headings';
+import Buttons from '../../../UI/Forms/Buttons/Buttons';
+
+import gif from './bartUp.gif';
+
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
-import TextFieldOutlined from '../../../UI/Forms/TextFields/TextFieldOutlined';
-import Heading from '../../../UI/Headings/Headings';
-import Buttons from '../../../UI/Forms/Buttons/Buttons';
-import gif from './bartUp.gif';
+
+import { GoChevronLeft } from 'react-icons/go';
+import { FiMusic } from 'react-icons/fi';
 
 const drawerWidth = 240;
 
@@ -65,36 +69,36 @@ const SideDrawerSignUp = ({open, setOpen}) => {
         classes={{
           paper: classes.drawerPaper,
         }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerCloseUp}>
-            <GoChevronLeft />
-          </IconButton>
-        </div>
-        <Divider />
-        <FiMusic className={classes.margLeft} size={160}/>
-        <Heading size="h2" color="black">
-          Music Project
-        </Heading>
-        <Heading size="h4" color="black">
-            I'm happy to see you stranger
-        </Heading>
-        <TextFieldOutlined value="name"/>
-        <TextFieldOutlined value="password"/>
-        <div className={classes.button}>
-          <Buttons>
-            Sign Up
-          </Buttons>
-        </div>
-        <div className={classes.account}>
-        <Heading size="h4" color="black">
-            <Link to={'/'}>
-                Already client ?
-            </Link>
-        </Heading>
-        </div>
-        <img className={classes.bart} src={gif} width="200px" alt="gif"/>
-      </Drawer>
+        >
+          <div className={classes.drawerHeader}>
+            <IconButton onClick={handleDrawerCloseUp}>
+              <GoChevronLeft />
+            </IconButton>
+          </div>
+          <Divider />
+          <FiMusic className={classes.margLeft} size={160}/>
+          <Heading size="h2" color="black">
+            Music Project
+          </Heading>
+          <Heading size="h4" color="black">
+              I'm happy to see you stranger
+          </Heading>
+          <TextFieldOutlined value="name"/>
+          <TextFieldOutlined value="password"/>
+          <div className={classes.button}>
+            <Buttons>
+              Sign Up
+            </Buttons>
+          </div>
+          <div className={classes.account}>
+            <Heading size="h4" color="black">
+                <Link to={'/'}>
+                    Already client ?
+                </Link>
+            </Heading>
+          </div>
+          <img className={classes.bart} src={gif} width="200px" alt="gif"/>
+        </Drawer>
     )
 }
 

@@ -1,15 +1,19 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { GoChevronLeft } from 'react-icons/go';
-import { FiMusic } from 'react-icons/fi';
+
+import Heading from '../../../UI/Headings/Headings';
+import Buttons from '../../../UI/Forms/Buttons/Buttons';
+import TextFieldOutlined from '../../../UI/Forms/TextFields/TextFieldOutlined';
+
+import gif from './bart.gif';
+
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
-import TextFieldOutlined from '../../../UI/Forms/TextFields/TextFieldOutlined';
-import Heading from '../../../UI/Headings/Headings';
-import Buttons from '../../../UI/Forms/Buttons/Buttons';
-import gif from './bart.gif';
+
+import { GoChevronLeft } from 'react-icons/go';
+import { FiMusic } from 'react-icons/fi';
 
 const drawerWidth = 240;
 
@@ -63,39 +67,39 @@ const SideDrawerSignIn = ({open, setOpen}) => {
         anchor="left"
         open={open}
         classes={{
-          paper: classes.drawerPaper,
+            paper: classes.drawerPaper,
         }}
-      >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            <GoChevronLeft />
-          </IconButton>
-        </div>
-        <Divider />
-        <FiMusic className={classes.margLeft} size={128}/>
-        <Heading size="h2" color="black">
-          Music Project
-        </Heading>
-        <Heading size="h4" color="black">
-          I'm happy to se you again <span role="img" aria-label="smiley">🙂</span>
-        </Heading>
-        <TextFieldOutlined value="name"/>
-        <TextFieldOutlined value="password"/>
-        <div className={classes.button}>
-          <Buttons>
-            Sign In
-          </Buttons>
-        </div>
-        <div className={classes.account}>
-        <Heading size="h4" color="black">
-          <Link to={'/signup'}>
-            Create account
-          </Link>  
-        </Heading>
-        </div>
-        <img className={classes.bart} src={gif} width="200px" alt="gif"/>
-      </Drawer>
+        >
+            <div className={classes.drawerHeader}>
+                <IconButton onClick={handleDrawerClose}>
+                    <GoChevronLeft />
+                </IconButton>
+            </div>
+            <Divider />
+            <FiMusic className={classes.margLeft} size={128}/>
+            <Heading size="h2" color="black">
+                Music Project
+            </Heading>
+            <Heading size="h4" color="black">
+                I'm happy to se you again <span role="img" aria-label="smiley">🙂</span>
+            </Heading>
+            <TextFieldOutlined value="name"/>
+            <TextFieldOutlined value="password"/>
+            <div className={classes.button}>
+                <Buttons>
+                    Sign In
+                </Buttons>
+            </div>
+            <div className={classes.account}>
+                <Heading size="h4" color="black">
+                    <Link to={'/signup'}>
+                        Create account
+                    </Link>  
+                </Heading>
+            </div>
+            <img className={classes.bart} src={gif} width="200px" alt="gif"/>
+        </Drawer>
     )
-}
+};
 
 export default SideDrawerSignIn;

@@ -1,7 +1,9 @@
 import React from 'react';
-import './Layout.css';
-import RecipeReviewCard from '../containers/Playlist/RecipeReviewCard';
+
 import NavbarSignIn from '../components/Navigation/Navbar/NavbarSignIn';
+import RecipeReviewCard from '../containers/Playlist/RecipeReviewCard';
+
+import './Layout.css';
 
 const LayoutSignIn = () => {
   return (
