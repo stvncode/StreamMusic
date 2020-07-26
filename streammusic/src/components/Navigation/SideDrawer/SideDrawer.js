@@ -1,39 +1,36 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-
-import TextFieldOutlined from '../../../UI/Forms/TextFields/TextFieldOutlined';
-import Heading from '../../../UI/Headings/Headings';
-import Buttons from '../../../UI/Forms/Buttons/Buttons';
-
-import gif from './bartUp.gif';
+import Heading from '../../UI/Headings/Headings';
 
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core/styles';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 import { GoChevronLeft } from 'react-icons/go';
 import { FiMusic } from 'react-icons/fi';
+import { MdLibraryMusic } from 'react-icons/md';
+
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
     margLeft: {
-        marginLeft: '25px',
+        marginLeft: '50px',
         marginTop: '20px',
         marginBottom: '10px',
     },
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
-      alignItems: 'center',
     },
     drawerPaper: {
       width: drawerWidth,
     },
     drawerHeader: {
       display: 'flex',
-      alignItems: 'center',
       padding: theme.spacing(0, 1),
       ...theme.mixins.toolbar,
       justifyContent: 'flex-end',
@@ -50,12 +47,9 @@ const useStyles = makeStyles(theme => ({
       marginTop: '5px',
       marginRight: '5px',
     },
-    text: {
-      marginTop: '-15px',
-    },
   }));
 
-const SideDrawerSignUp = ({open, setOpen}) => {
+const SideDrawer = ({open, setOpen}) => {
 
     const classes = useStyles();
 
@@ -79,32 +73,25 @@ const SideDrawerSignUp = ({open, setOpen}) => {
             </IconButton>
           </div>
           <Divider />
-          <FiMusic className={classes.margLeft} size={180}/>
+          <FiMusic className={classes.margLeft} size={128}/>
           <Heading size="h2" color="black">
             Music Project
           </Heading>
-          <Heading size="h4" color="black">
-              I'm happy to see you stranger
-          </Heading>
-          <div className={classes.text}>
-          <TextFieldOutlined value="name"/>
-          <TextFieldOutlined value="password"/>
-          </div>
-          <div className={classes.button}>
-            <Buttons>
-              Sign Up
-            </Buttons>
-          </div>
-          <div className={classes.account}>
-            <Heading size="h4" color="black">
-                <Link to={'/'}>
-                    Already client ?
-                </Link>
-            </Heading>
-          </div>
-          <img className={classes.bart} src={gif} width="200px" alt="gif"/>
+          <Divider />
+          <ListItem button>
+            <ListItemIcon>
+            <FiMusic size={20}/>
+            </ListItemIcon>
+            <ListItemText primary="Salon" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <MdLibraryMusic size={20}/>
+            </ListItemIcon>
+            <ListItemText primary="Playlist" />
+          </ListItem>
         </Drawer>
     )
 }
 
-export default SideDrawerSignUp;
+export default SideDrawer;

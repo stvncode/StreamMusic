@@ -7,9 +7,9 @@ const useStyles = makeStyles(theme => ({
   root: {
     '& > *': {
       margin: theme.spacing(1),
-      width: 120,
+      width: 200,
       height: 50,
-      marginLeft: '56px',
+      marginLeft: '20px',
       marginTop: '15px',
     },
   },
@@ -24,7 +24,7 @@ const TextFieldOutlined = ({value, children}) => {
   if (value === 'name')
     return (
       <form className={classes.root} noValidate autoComplete="off">
-        <TextField className={classes.top} id="outlined-basic" label="Name" variant="outlined">
+        <TextField inputProps={{ style: {textAlign: 'center'} }} className={classes.top} id="standard-basic" label="Name" variant="standard">
           {children}
         </TextField>
       </form>
@@ -33,7 +33,7 @@ const TextFieldOutlined = ({value, children}) => {
   if (value === 'password')
     return (
       <form className={classes.root} noValidate autoComplete="off">
-        <TextField className={classes.top} id="outlined-basic" label="Password" variant="outlined">
+        <TextField inputProps={{ style: {textAlign: 'center'} }} className={classes.top} id="standard-basic" label="Password" variant="standard">
           {children}
         </TextField>
       </form>

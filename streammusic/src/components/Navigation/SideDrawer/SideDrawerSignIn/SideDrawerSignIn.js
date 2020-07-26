@@ -49,7 +49,10 @@ const useStyles = makeStyles(theme => ({
     account: {
       marginTop: '5px',
       marginRight: '10px',
-    }
+    },
+    text: {
+      marginTop: '-15px',
+    },
   }));
 
 const SideDrawerSignIn = ({open, setOpen}) => {
@@ -83,11 +86,15 @@ const SideDrawerSignIn = ({open, setOpen}) => {
             <Heading size="h4" color="black">
                 I'm happy to se you again <span role="img" aria-label="smiley">🙂</span>
             </Heading>
+            <div className={classes.text}>
             <TextFieldOutlined value="name"/>
             <TextFieldOutlined value="password"/>
+            </div>
             <div className={classes.button}>
                 <Buttons>
-                    Sign In
+                    <Link to={'/layout'}>
+                        Sign In
+                    </Link>
                 </Buttons>
             </div>
             <div className={classes.account}>
